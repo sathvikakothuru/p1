@@ -137,14 +137,17 @@ body {
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-    padding: 0 20px 40px;
+    gap: 70px;
+     max-width: 1000px; 
+  margin: 0 auto;
+   height: 400px;
+  padding: 20px;
+
 }
 .dashboard-card {
     background: white;
-    padding: 30px;
-    border-radius: 15px;
+    padding: 20px;
+    border-radius: 10px;
     text-decoration: none;
     color: black;
     text-align: center;
@@ -153,7 +156,7 @@ body {
     cursor: pointer;
 }
 .dashboard-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.03);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 .dashboard-card h3 {
