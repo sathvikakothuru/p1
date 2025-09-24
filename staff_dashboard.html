@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampusConnect</title>
+    <title>Staff Dashboard - CampusConnect</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,52 +13,33 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Profile</a></li>
                 <li><a href="#">Settings</a></li>
                 <li><a href="#">Logout</a></li>
             </ul>
         </nav>
     </header>
-
-    <main class="dashboard-container">
-        <h1>Welcome, Student!</h1>
+    <main class="staff-dashboard-container">
+        <h1>Welcome, Staff Member!</h1>
         <p>A quick overview of your campus life.</p>
-        <p id="studentInfo">Student ID: [ID] | Class: [Class] | Section: [Section]</p>
-
         <div class="dashboard-grid">
-            <a class="dashboard-card" id="attendance-card" href="#">
-                <h3>Attendance</h3>
-                <p>View your class attendance records.</p>
+            <a class="dashboard-card" id="timetable-card" href="#">
+                <h3>Timetable</h3>
+                <p>View your weekly class schedule.</p>
             </a>
             <a class="dashboard-card" id="cafeteria-card" href="#">
                 <h3>Cafeteria</h3>
                 <p>Order food and check today's menu.</p>
             </a>
-            <a class="dashboard-card" id="timetable-card" href="#">
-                <h3>Timetable</h3>
-                <p>View your weekly class schedule.</p>
-            </a>
             <a class="dashboard-card" id="library-card" href="#">
                 <h3>Library</h3>
-                <p>Browse books and manage your loans.</p>
-            </a>
-            <a class="dashboard-card" id="events-card" href="#">
-                <h3>Events</h3>
-                <p>Stay updated on upcoming events.</p>
-            </a>
-            <a class="dashboard-card" id="skills-card" href="#">
-                <h3>Skills</h3>
-                <p>Enhance your skills with new courses.</p>
+                <p>Browse and pre-book books.</p>
             </a>
         </div>
-
         <div id="dynamic-content">
             <p>Select a card to view details.</p>
         </div>
     </main>
-    
-    <footer>
-        <p>&copy; 2025 CampusConnect. All rights reserved.</p>
-    </footer>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,13 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Global logout functionality for all pages with a logout link ---
+    const logoutLinks = document.querySelectorAll('a[href="#"]');
+    logoutLinks.forEach(link => {
+        if (link.textContent.trim() === 'Logout') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'index.html';
+            });
+        }
+    });
+
     // Check which page we are on by looking for a unique element
     const dashboardContainer = document.querySelector('.dashboard-container');
     const staffDashboardContainer = document.querySelector('.staff-dashboard-container');
 
     if (dashboardContainer) {
         // --- This code runs on the student dashboard page (main.html) ---
+        const studentInfoElement = document.getElementById('studentInfo');
         const dynamicContent = document.getElementById('dynamic-content');
-        const logoutLink = document.querySelector('a[href="#"]');
+        
+        const student = {
+            id: 'S001',
+            class: 'B.Tech',
+            section: 'A',
+            name: 'John Doe'
+        };
 
+        if (studentInfoElement) {
+            studentInfoElement.innerHTML = `Student ID: <strong>${student.id}</strong> | Class: <strong>${student.class}</strong> | Section: <strong>${student.section}</strong>`;
+        }
+        
         const studentData = {
             attendance: [
                 { subject: "Web Dev", status: "Present", date: "2025-09-22" },
@@ -42,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         };
 
-        // Add event listeners for the dashboard cards to display dynamic content
         document.getElementById('attendance-card').addEventListener('click', () => {
             let html = '<h2>Your Attendance</h2><ul class="content-list">';
             studentData.attendance.forEach(item => {
@@ -101,20 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
             html += '</ul>';
             dynamicContent.innerHTML = html;
         });
-
-        // Add a click event listener for the logout link
-        if (logoutLink) {
-            logoutLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.location.href = 'index.html';
-            });
-        }
         
+
     } else if (staffDashboardContainer) {
         // --- This code runs on the staff dashboard page (staff_dashboard.html) ---
         const dynamicContent = document.getElementById('dynamic-content');
-        const logoutLink = document.querySelector('a[href="#"]');
-
+        
         const staffData = {
             timetable: [
                 { day: "Monday", time: "09:00 - 10:00", subject: "Web Development" },
@@ -165,24 +178,18 @@ document.addEventListener('DOMContentLoaded', () => {
             html += '</ul>';
             dynamicContent.innerHTML = html;
         });
+    }
+
+    // --- This is the login page logic (index.html) ---
+    const studentLoginBtn = document.querySelector('.student-login-btn');
+    const staffLoginBtn = document.querySelector('.staff-login-btn');
+    const studentForm = document.getElementById('student-form');
+    const staffForm = document.getElementById('staff-form');
+    const backButtons = document.querySelectorAll('.back-btn');
+    const submitButtons = document.querySelectorAll('.submit-btn');
+
+    if (studentLoginBtn) { // Check if we are on the login page
         
-        // Add a click event listener for the logout link
-        if (logoutLink) {
-            logoutLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.location.href = 'index.html';
-            });
-        }
-
-    } else {
-        // --- This is the login page logic (index.html) ---
-        const studentLoginBtn = document.querySelector('.student-login-btn');
-        const staffLoginBtn = document.querySelector('.staff-login-btn');
-        const studentForm = document.getElementById('student-form');
-        const staffForm = document.getElementById('staff-form');
-        const backButtons = document.querySelectorAll('.back-btn');
-        const submitButtons = document.querySelectorAll('.submit-btn');
-
         function showForm(form) {
             document.getElementById('role-selection').classList.add('hidden');
             document.getElementById('login-forms').classList.remove('hidden');
@@ -192,8 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
         function showRoleSelection() {
             document.getElementById('role-selection').classList.remove('hidden');
             document.getElementById('login-forms').classList.add('hidden');
-            studentForm.classList.add('hidden');
-            staffForm.classList.add('hidden');
+            if (studentForm) studentForm.classList.add('hidden');
+            if (staffForm) staffForm.classList.add('hidden');
         }
 
         studentLoginBtn.addEventListener('click', () => showForm(studentForm));
