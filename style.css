@@ -158,7 +158,11 @@ body {
 .dashboard-card:hover {
     transform: scale(1.03);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+    
 }
+
+
 .dashboard-card h3 {
     margin: 10px 0;
     font-size: 20px;
@@ -168,6 +172,31 @@ body {
     color: #555;
 }
 
+.staffdashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 70px;
+     max-width: 1000px; 
+  margin: 0 auto;
+  
+  padding: 20px;
+
+}
+.staffdashboard-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.staffdashboard-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);}
+
 /* --- Unique colors per card for both dashboards --- */
 .dashboard-card#timetable-card { border-top: 6px solid #ff9800; }
 .dashboard-card#attendance-card { border-top: 6px solid #f87171; }
@@ -175,6 +204,11 @@ body {
 .dashboard-card#cafeteria-card { border-top: 6px solid #fbbf24; }
 .dashboard-card#library-card { border-top: 6px solid #60a5fa; }
 .dashboard-card#events-card { border-top: 6px solid #a78bfa; }
+
+.staffdashboard-card#timetable-card { border-top: 6px solid  #f87171;}
+.staffdashboard-card#cafeteria-card { border-top: 6px solid #fbbf24; }
+.staffdashboard-card#library-card { border-top: 6px solid #60a5fa; }
+
 
 /* --- Dynamic content area and timetable styles --- */
 #dynamic-content {
