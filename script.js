@@ -216,15 +216,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 const form = button.closest('.login-form');
                 const usernameInput = form.querySelector('input[type="text"]').value;
                 const passwordInput = form.querySelector('input[type="password"]').value;
-
-                if (form.id === 'student-form' && usernameInput === 'student' && passwordInput === '123') {
-                    window.location.href = 'main.html';
-                } else if (form.id === 'staff-form' && usernameInput === 'staff' && passwordInput === '123') {
-                    window.location.href = 'staff_dashboard.html';
+                
+                // New logic: check if fields are not empty
+                if (usernameInput.trim() !== '' && passwordInput.trim() !== '') {
+                    if (form.id === 'student-form') {
+                        window.location.href = 'main.html';
+                    } else if (form.id === 'staff-form') {
+                        window.location.href = 'staff_dashboard.html';
+                    }
                 } else {
-                    alert('Invalid credentials. Please try again.');
+                    alert('Please enter a username and password.');
                 }
             });
         });
     }
+
+    // --- Global logout functionality ---
+    const logoutlinks = document.querySelectorAll('a[href="#"]');
+    logoutLinks.forEach(link => {
+        if (link.textContent.trim() === 'Logout') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'index.html';
+            });
+        }
+    });
 });
