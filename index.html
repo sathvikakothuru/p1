@@ -6,10 +6,41 @@
     <title>CampusConnect Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            
+            background-image: url("bc1.jpg") ;
+             max-width: 100%;
+             width:100%; 
+             height:max-content;
+             margin:0;
+             padding: 0;
+             background-size: cover;
+             background-repeat: no-repeat;
+             background-position: center;
+             height: 100vh;
+    }
+   body::before{
+    content: "";
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    background: rgba(0, 0, 0, 0.4);
+    z-index:-1
+   }
+        
+    </style>
+    
 </head>
 <body>
+    <div class="bc"></div>
     <div class="login-container">
-        <h1>Login to CampusConnect</h1>
+    <pre></pre>
+        <img src="logo.jpg" alt="" width="100%" >
+        <h1 align="center">HELLO, WELCOME!</h1>
+        <h2 align="left">Login to CampusConnect :</h2></pre>
         
         <div id="role-selection">
             <button class="login-button student-login-btn">Student Login</button>
@@ -34,6 +65,7 @@
             </div>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,8 +1,10 @@
 body {
+    /* margin-top: 30px; */
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6;
+    background-color: rgb(243, 248, 251);
+   /* background-image: -webkit-image-set(bc.); */
     color: #333;
     line-height: 1.6;
 }
@@ -13,12 +15,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #fff;
+    background-color:rgb(195, 225, 243);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .topbar h2 {
     margin: 0;
-    color: #3b83f6;
+    color:rgb(74, 97, 251);
 }
 .nav-links {
     list-style: none;
@@ -39,17 +41,27 @@ body {
 
 /* --- Login Page Styles --- */
 .login-container {
-    background-color: #fff;
+    background-color: rgb(246, 250, 253);
     padding: 3rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 90%;
     margin: 50px auto;
+    margin-top:20px auto;
     text-align: center;
-}
+    z-index: 1;
+    animation:slideUp 2.0s ease-in-out;
+ }
+ @keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to{ transform: translateY(0); opacity: 1;}
+ }
+
+
+
 .login-container h1 {
-    color: #4CAF50;
+    color: rgb(24, 126, 251);
     margin-bottom: 2rem;
 }
 .login-button {
@@ -58,21 +70,24 @@ body {
     margin-bottom: 1rem;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family:sans-serif;
 }
 .student-login-btn {
-    background-color: #4CAF50;
-    color: #fff;
+    background-color:rgb(181, 234, 252);
+    color:rgb(0, 98, 255);
 }
 .staff-login-btn {
-    background-color: #2196F3;
-    color: #fff;
+    background-color: rgb(181, 234, 252);
+    color:rgb(0, 98, 255);
 }
 .login-button:hover {
-    filter: brightness(95%);
+    /* filter: brightness(95%); */
+    color: white;
+    background-color:rgb(60, 117, 249);
 }
 .login-form {
     display: flex;
@@ -151,7 +166,7 @@ body {
     text-decoration: none;
     color: black;
     text-align: center;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -189,7 +204,7 @@ body {
     text-decoration: none;
     color: black;
     text-align: center;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -249,3 +264,35 @@ body {
     background-color: #3b83f6;
     color: #fff;
 }
+.intro{
+    background-color: rgb(55, 129, 172);
+    color: white;
+    text-shadow: gray 100px;
+    padding: 10px;
+    text-align: center;
+   border-radius: 12px 12px 12px 12px;
+   margin-bottom: 50px;
+}
+.intro1{
+    background-color:  rgb(55, 129, 172);
+    color: white;
+    text-shadow: gray 100px;
+    padding: 10px;
+    text-align: center;
+   border-radius: 12px 12px 12px 12px;
+   margin-bottom: 50px;
+}
+/* .bc{
+    position: fixed;
+    background-image: url("bc1.jpg");
+
+    width: 100%;
+    height:100%; */
+    /* background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1; */
+/* }
+.h2
